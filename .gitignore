@@ -30,6 +30,3 @@
 *.exe
 *.out
 *.app
-
-# contact files
-contacts*
