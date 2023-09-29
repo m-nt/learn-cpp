@@ -1,0 +1,12 @@
+contacts:
+  - emma:
+      name: 'emma garcia'
+  - bob: 
+      name: 'bob marley'
+      number: '09381002020'
+  - bruce:
+      name: 'bruce wayne'
+      nuumber: '09303423212'
+  - jane:
+      name: 'jane doe'
+      nuumber: '09119201290' 
