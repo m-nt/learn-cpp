@@ -16,4 +16,7 @@ it was nice. but i promise spend more time on this.
 know its 17:35 and i want to go for a walk, maybe work more on this tonight.
 tomorrow is a big waorking day, hell yeah.
 also its nice to wite this with vim. i like it..
-
+...
+well its 23:16 and after a lot of try and error i fond c++ to be very hard.
+but not surprised. its enough for today.
+...
