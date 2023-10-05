@@ -8,9 +8,6 @@ using namespace std;
 
 // global implementations
 string _FILE_STORE = "contacts.yaml";
-string _MAIN_NAME = "contacts";
-string _INDEX_INDICATOR = "- ";
-
 
 struct contact
 {
@@ -22,7 +19,8 @@ struct contact
 
 int main() {
     ifstream _file("contacts.yaml", ios::in | ios::binary | ios::ate);
-    vector<contact>* output;
+    vector<contact> contacts;
+    vector<contact>* output = &contacts;
     streampos size;
     char* memblock;
     if (_file.is_open()) {
@@ -35,13 +33,27 @@ int main() {
 
         // itterate through all characters of the _file from memory
         for (size_t i = 0; i < size; i++) {
-            // cout << memblock[i] << '\n';
+
             // check for contracts name
-            if (memblock[i] == 'c' || memblock[i + 1] == 'o' || memblock[i + 2] == 'n') {
-                string maybe_contract(memblock + i, _MAIN_NAME.size());
-                if (maybe_contract == _MAIN_NAME) {
-                    cout << "found! " << maybe_contract << '\n';
-                }
+            string contract(memblock + i, 8);
+            if (contract == "contacts") {
+                cout << "found! a index:" << i << " is contact" << '\n';
+            }
+            if (memblock[i] == ':') {
+                // string index_name(memblock + i, )
+                cout << "found! a index:" << i << " is  :" << '\n';
+            }
+            // check for '-'
+            if (memblock[i] == '-') {
+                cout << "found! a index:" << i << " is  -" << '\n';
+            }
+            // check for double space
+            if (memblock[i] == ' ') {
+                cout << "found! a index:" << i << " is space" << '\n';
+            }
+            // check for \n
+            if (memblock[i] == '\n') {
+                cout << "found! a index:" << i << " is  \\n" << '\n';
             }
         }
         delete[] memblock;
