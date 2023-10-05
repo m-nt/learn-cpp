@@ -25,6 +25,7 @@ but not surprised. its enough for today.
 ...
 
 yeah, i don't know why im reinventing the wheel 🤔  
-but its cool, im learning about parsing and im having fun. i like c++
+but its cool, im learning about parsing and im having fun. i like c++.  
+also i regret chosing yaml, counting space in parsing is a pain in the ass😓  
 
 ...
