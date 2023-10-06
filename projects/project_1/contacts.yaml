@@ -1,13 +1,14 @@
 contacts:
   - emma:
-    - name: 'emma garcia'
-    - nuumber: '09903354554'
+    - name: emma garcia
+    - number: 09903354554
   - bob: 
-    - name: 'bob marley'
-    - number: '09381002020'
+    - name: bob marley
+    - number: 09381002020
   - bruce:
-    - name: 'bruce wayne'
-    - nuumber: '09303423212'
+    - name: bruce wayne
+    - number: 09303423212
   - jane:
-    - name: 'jane doe'
-    - nuumber: '9119201311' 
+    - name: jane doe
+    - number: 09119201311
+

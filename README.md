@@ -21,11 +21,15 @@ also its nice to wite this with vim. i like it..
 
 well its 23:16 and after a lot of try and error i fond c++ to be very hard.  
 but not surprised. its enough for today.
-
 ...
 
 yeah, i don't know why im reinventing the wheel 🤔  
 but its cool, im learning about parsing and im having fun. i like c++.  
 also i regret chosing yaml, counting space in parsing is a pain in the ass😓  
+
+...
+yeeeee. I finaly loaded contacts successfullyyy 😍. but i wish i used something simpler than this fucking yaml B***shit.  
+the fun part is its still magicly fast, like 69 microseconds ? like what 😮  
+any way another weekend and a successful progress.  
 
 ...
