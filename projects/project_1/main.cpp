@@ -1,15 +1,18 @@
+#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <cstring>
 #include <vector>
+#include <bits/stdc++.h> 
+#include "yamlparser.cpp"
 
-// common operations
-
+using namespace std;
 
 // application entry point
 int main(int argc, char const* argv[]) {
-    std::cout << "hello world!\n";
-    std::string str = load_file();
-    std::cout << str << '\n';
+    Yamlparser yaml("contacts.yaml");
+    yaml.load();
+    yaml.print();
+    yaml.save();
     return 0;
 }

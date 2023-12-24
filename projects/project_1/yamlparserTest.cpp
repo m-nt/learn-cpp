@@ -4,25 +4,39 @@
 #include <cstring>
 #include <vector>
 #include <bits/stdc++.h> 
-#include "yamlparser.h"
-
 using namespace std;
 
-Yamlparser::Yamlparser(string file_path) : _FILE_STORE{ file_path }{}
-Yamlparser::Yamlparser() : _FILE_STORE{ "contacts.yaml" }{}
+// global implementations
+string _FILE_STORE = "contacts.yaml";
 
-void Yamlparser::save() {
-    cout << "saving the contacts" << "\n";
-}
-void Yamlparser::print() {
-    cout << "[index]\t[name]\t\t\t[number]" << '\n';
-    for (size_t i = 0; i < contacts.size(); i++) {
-        cout << "" << i + 1 << "\t" << contacts[i].name << "\t\t" << contacts[i].number << '\n';
-    }
-}
-void Yamlparser::load() {
-    ifstream _file(_FILE_STORE, ios::in | ios::binary | ios::ate);
-    vector<contact> _contacts;
+struct contact {
+    string uname;
+    string name;
+    string number;
+};
+enum contact_types {
+    UNKNOWN = 0,
+    UNAME = 1,
+    VALUE_NAME = 2,
+    VALUE_NUMBER = 3,
+    VALUE = 4
+};
+struct lexer {
+    size_t index;
+    size_t value_start_index;
+    string token;
+};
+
+
+int main() {
+    // timing the proccess
+    clock_t start, end;
+    start = clock();
+    ios_base::sync_with_stdio(false);
+
+    ifstream _file("contacts.yaml", ios::in | ios::binary | ios::ate);
+    vector<contact> contacts;
+    vector<contact>* output = &contacts;
     streampos size;
     char* memblock;
     if (_file.is_open()) {
@@ -115,7 +129,7 @@ void Yamlparser::load() {
                                     }
                                     else if (_value == "number") {
                                         the_contact.number = _inner_value;
-                                        _contacts.push_back(the_contact);
+                                        contacts.push_back(the_contact);
                                     }
                                     break;
                                 }
@@ -141,10 +155,23 @@ void Yamlparser::load() {
                 }
             }
         }
+        cout << contacts.size() << " contact is loaded" << '\n';
+        for (size_t i = 0; i < contacts.size(); i++) {
+            cout << "[#" << i + 1 << "]-name: " << contacts[i].name << " -number: " << contacts[i].number << '\n';
+        }
 
         // parse the tokens to create a tree
+
         delete[] memblock;
+
+        // timing the process
+        end = clock();
+        // Calculating total time taken by the program.
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "Time taken by program is : " << fixed
+            << time_taken << setprecision(5);
+        cout << " sec " << endl;
     }
     else cout << "Unable to open _file";
-    contacts = _contacts;
+    return 0;
 }
