@@ -1,9 +1,8 @@
 # learn-cpp
 A Project base learning for cpp, from basic projects to hard ones 
 
-## Project 1 - a simple terminal based notebook.
+## Project 1 - a simple yaml parser.
 ### features
-* add, rename, delete, update contacts
-* show list of contacts, paginated
-* load and save data from file (simple io), ```use json, yaml etc... or your own implementation```
-* render contacts as html view and open it in browser
+* serialize to vector and deserialize to yaml format.   
+* save from vector to yaml file.   
+* load from string/file.   
