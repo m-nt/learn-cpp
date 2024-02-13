@@ -5,7 +5,6 @@
 #include <vector>
 #include <bits/stdc++.h> 
 #include "yamlparser.cpp"
-
 using namespace std;
 
 // application entry point

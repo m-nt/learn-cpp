@@ -5,6 +5,7 @@
 #include <vector>
 #include <bits/stdc++.h> 
 #include "yamlparser.h"
+#include <boost/stacktrace.hpp>
 
 using namespace std;
 
@@ -13,11 +14,37 @@ Yamlparser::Yamlparser() : _FILE_STORE{ "contacts.yaml" }{}
 
 void Yamlparser::save() {
     cout << "saving the contacts" << "\n";
+    fstream _file(_FILE_STORE, ios::out | ios::binary);
+    _file.seekp(0);
+    _file.write(['c', 'o', 'n', 't', 'a', 'c', 't', 's', '\n'], 10);
+    for (size_t i = 0; i < contacts.size(); i++) {
+        
+    }
+    
 }
 void Yamlparser::print() {
     cout << "[index]\t[name]\t\t\t[number]" << '\n';
     for (size_t i = 0; i < contacts.size(); i++) {
         cout << "" << i + 1 << "\t" << contacts[i].name << "\t\t" << contacts[i].number << '\n';
+    }
+}
+void Yamlparser::load_v2() {
+    ifstream _file(_FILE_STORE, ios::in | ios::binary | ios::ate);
+    vector<contact> _contacts;
+    streampos size;
+    char* memblock;
+    if (_file.is_open()) {
+        // load _file and set sizes
+        size = _file.tellg();
+        memblock = new char[size];
+        _file.seekg(0, ios::beg);
+        _file.read(memblock, size);
+        _file.close();
+        vector<lexer_v2> tokens;
+
+        for (size_t i = 0; i < size; i++) {
+            
+        }
     }
 }
 void Yamlparser::load() {
